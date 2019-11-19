@@ -4,11 +4,6 @@ from datetime import date
 import random
 import time
 
-#import os
-#pre = os.path.dirname(os.path.realpath(__file__))
-#fname = 'numbers.xlsx'
-#path = os.path.join(pre, fname)
-#Z = pd.read_excel(path)
 
 df = pd.read_excel('numbers.xlsx')
 target_list = df['working column'].tolist()
@@ -24,8 +19,7 @@ driver.find_element_by_id('pass').send_keys(password)
 driver.find_element_by_id('loginbutton').click()
 
 z = 0
-#while z == 0:
-   #x = z + int(input())
+
 random = random.randint
 
 result_list = list()
@@ -43,10 +37,8 @@ for x in target_list:
        print('break')
        time.sleep(random(600,1200))
        z = 0
-#print(result_list)
 
 export = pd.DataFrame(result_list, columns = ['Users'])
-#print(export)
 
 today = date.today()
 print(today)
